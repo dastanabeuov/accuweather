@@ -1,9 +1,7 @@
 # frozen_string_literal: true
-class AccuweatherForCurrentService
-  ACCU_WEATHER_URL = 'http://dataservice.accuweather.com'.freeze
-  
+class AccuweatherForCurrentService  
   def self.current(geocode)
-    connect = Faraday.new(ACCU_WEATHER_URL) do |f|
+    connect = Faraday.new(GeocodeService::BASE_URL) do |f|
       f.request :json # encode req bodies as JSON and automatically set the Content-Type header
       f.request :retry # retry transient failures
       f.response :json # decode response bodies as JSON
@@ -25,5 +23,4 @@ class AccuweatherForCurrentService
     current
     #binding.pry
   end
-
 end

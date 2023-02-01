@@ -1,7 +1,7 @@
 class GeocodeService
   BASE_URL = 'http://dataservice.accuweather.com'.freeze
   
-  def self.city_search(city_name_default)
+  def self.search_location(default_location)
     connect = Faraday.new(BASE_URL) do |f|
       f.request :json # encode req bodies as JSON and automatically set the Content-Type header
       f.request :retry # retry transient failures
@@ -9,7 +9,7 @@ class GeocodeService
     end
     response = connect.get('/locations/v1/cities/search?', {
       apikey: Rails.application.credentials.accuweather_api_key,
-      q: city_name_default,
+      q: default_location,
     })
     data = response.body.first
     geocode = OpenStruct.new
