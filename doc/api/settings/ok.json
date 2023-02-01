@@ -1,0 +1,37 @@
+{
+  "resource": "Settings",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/settings/must_update",
+  "description": "Ok",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/settings/must_update?device_version=1.0",
+      "request_body": null,
+      "request_headers": {
+        "Access-Token": "1234567890123456789012",
+        "Client": "abcdefghijklmnopqrstuv",
+        "Uid": "delmar@ankunding-kreiger.net"
+      },
+      "request_query_parameters": {
+        "device_version": "1.0"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"must_update\": false\n}",
+      "response_headers": {
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"http://localhost:3000api/v1/settings/must_update?device_version=1.0\" -X GET \\\n\t-H \"Version: HTTP/1.0\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Access-Token: 1234567890123456789012\" \\\n\t-H \"Client: abcdefghijklmnopqrstuv\" \\\n\t-H \"Uid: delmar@ankunding-kreiger.net\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

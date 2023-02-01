@@ -33,6 +33,16 @@ gem 'yaaf', '~> 2.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Use Apitome viewers - the generated api doc
+gem 'apitome'
+
+# Look up a map address and convert it to latitude, longitude, etc.
+gem 'geocoder'
+
+# Simple flexible HTTP client library, with support for multiple backends.
+gem "faraday"
+gem "faraday_middleware"
+
 group :development, :test do
   gem 'annotate', '~> 3.2', '>= 3.0.3'
   gem 'bullet', '~> 7.0.3'

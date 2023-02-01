@@ -36,3 +36,5 @@ config/master.key
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/config/master.key

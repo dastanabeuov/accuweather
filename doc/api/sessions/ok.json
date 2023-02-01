@@ -1,0 +1,41 @@
+{
+  "resource": "Sessions",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/users/sign_in",
+  "description": "Ok",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/users/sign_in",
+      "request_body": "{\"user\":{\"email\":\"scottie.ondricka@crist-cassin.info\",\"password\":\"BrX7u4WzMv8\"},\"format\":\"json\"}",
+      "request_headers": {
+        "Access-Token": "1234567890123456789012",
+        "Client": "abcdefghijklmnopqrstuv",
+        "Uid": "scottie.ondricka@crist-cassin.info"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"user\": {\n    \"id\": 26,\n    \"email\": \"scottie.ondricka@crist-cassin.info\",\n    \"name\": \"Hans Langosh V Johnston\",\n    \"username\": \"delcie\",\n    \"first_name\": \"Hans Langosh V\",\n    \"last_name\": \"Johnston\",\n    \"uid\": \"scottie.ondricka@crist-cassin.info\",\n    \"provider\": \"email\",\n    \"created_at\": \"2023-01-25T15:31:09.846+06:00\",\n    \"updated_at\": \"2023-01-25T15:31:09.955+06:00\"\n  }\n}",
+      "response_headers": {
+        "access-token": "1234567890123456789012",
+        "token-type": "Bearer",
+        "client": "abcdefghijklmnopqrstuv",
+        "expiry": "1737797469",
+        "uid": "scottie.ondricka@crist-cassin.info"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/users/sign_in\" -d '{\"user\":{\"email\":\"scottie.ondricka@crist-cassin.info\",\"password\":\"BrX7u4WzMv8\"},\"format\":\"json\"}' -X POST \\\n\t-H \"Version: HTTP/1.0\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Access-Token: 1234567890123456789012\" \\\n\t-H \"Client: abcdefghijklmnopqrstuv\" \\\n\t-H \"Uid: scottie.ondricka@crist-cassin.info\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

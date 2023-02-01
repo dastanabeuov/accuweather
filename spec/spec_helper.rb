@@ -34,3 +34,12 @@ RSpec.configure do |config|
     ActionMailer::Base.deliveries.clear
   end
 end
+
+RspecApiDocumentation.configure do |config|
+  config.curl_host = 'http://localhost:3000'
+  # An array of output format(s).
+  # Possible values are :json, :html, :combined_text, :combined_json,
+  #   :json_iodocs, :textile, :markdown, :append_json, :slate,
+  #   :api_blueprint, :open_api
+  config.format = [:json]
+end
