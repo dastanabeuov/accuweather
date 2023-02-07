@@ -7,12 +7,18 @@ module Api
       before_action :set_location
 
       def current
-        #binding.pry
-        current_weather_cache_key = "#{@geocode.country_code}/#{@geocode.country}"
-        current_weather_cache_exist = Rails.cache.exist?(current_weather_cache_key)
-        @current = Rails.cache.fetch(current_weather_cache_key, expires_in: 1.hours) do
-          AccuweatherForCurrentService.current(geocode)
-        end
+        @current = AccuweatherService.current(@geocode)
+        render json: { action: "current", current: @current }, status: 200
+      end
+
+      def historical
+        @historical = AccuweatherService.historical(@geocode)
+        render json: { action: "historical", historical: @historical }, status: 200
+      end
+
+      def max
+        @max = AccuweatherService.max(@geocode)
+        render json: { action: "max", max: @max }, status: 200
       end
 
       private

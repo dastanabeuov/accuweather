@@ -20,7 +20,6 @@ class GeocodeService
     geocode.country = data["Country"]["LocalizedName"]
     geocode.city = data["LocalizedName"]
     geocode
-    #binding.pry
   end
 
   # This method send request with gem 'geocoder'

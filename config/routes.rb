@@ -21,7 +21,14 @@ Rails.application.routes.draw do
 
       #AccuWeather
       resources :accuweathers, only: [] do
-        get :current, on: :collection
+        collection do
+          get :current
+          get :historical
+          get "/historical/max", to: 'accuweathers#max'
+          get "/historical/min", to: 'accuweathers#min'
+          get "/historical/avg", to: 'accuweathers#avg'
+          get :by_time
+        end
       end
       #AccuWeather
     end

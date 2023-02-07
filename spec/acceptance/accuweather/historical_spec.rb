@@ -1,14 +1,14 @@
 require_relative '../support/acceptance_tests_helper'
 
-resource 'Current' do
+resource 'Historical' do
   header 'Accept', 'application/json'
   header 'Content-Type', 'application/json'
 
-  explanation 'Endpoints to #current for a current temperature'
+  explanation 'Endpoints to #historical for a Hourly temperature for the last 24 hours'
 
-  route 'api/v1/accuweathers/current', 'current' do
-    route_summary 'Starts a new request for a current temperature with AccuWeather.COM'
-    route_description 'Given valid credentials(API_KEY), will create a new API request for a current temperature'
+  route 'api/v1/accuweathers/historical', 'historical' do
+    route_summary 'Starts a new request for a Hourly temperature for the last 24 hours with AccuWeather.COM'
+    route_description 'Given valid credentials(API_KEY), will create a new API request for a Hourly temperature for the last 24 hours'
 
     get 'We get information from AccuWeather', document: :v1 do
       parameter :country, 'The country name', scope: :country, required: true
@@ -19,7 +19,7 @@ resource 'Current' do
       parameter :weather_icon, 'The weather icon for - img', scope: :weather_icon, required: true
       parameter :is_day_time, 'The is day time - true ore false', scope: :is_day_time, required: true
 
-      example 'Ok - all current info', document: :v1 do
+      example 'Ok - Hourly temperature for the last 24 hours', document: :v1 do
         request = { current: { city: 'Almaty' } }
 
         do_request(request)
