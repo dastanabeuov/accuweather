@@ -21,6 +21,16 @@ module Api
         render json: { action: "max", max: @max }, status: 200
       end
 
+      def min
+        @min = AccuweatherService.min(@geocode)
+        render json: { action: "min", min: @min }, status: 200
+      end
+
+      def avg
+        @avg = AccuweatherService.avg(@geocode)
+        render json: { action: "avg", avg: @avg }, status: 200
+      end
+
       private
 
       def set_location

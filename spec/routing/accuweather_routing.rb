@@ -11,5 +11,13 @@ describe Api::V1::AccuweathersController, type: :routing do
     it '#max' do
       expect(get: "/api/v1/accuweathers/historical/max").to route_to("api/v1/accuweathers#max")
     end
+
+    it '#min' do
+      expect(get: "/api/v1/accuweathers/historical/min").to route_to("api/v1/accuweathers#min")
+    end
+
+    it '#avg' do
+      expect(get: "/api/v1/accuweathers/historical/avg").to route_to("api/v1/accuweathers#avg")
+    end
   end
 end

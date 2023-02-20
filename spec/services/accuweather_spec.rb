@@ -21,4 +21,18 @@ RSpec.describe 'AccuweatherService' do
 
     expect(json['Temperature']['Metric']['Value']).to_not be nil
   end
+
+  specify '#min' do
+    geocode_stub = double 'GeocodeService', city_search: 'Almaty'
+    response_stub = double 'AccuweatherService', min: geocode
+
+    expect(json['Temperature']['Metric']['Value']).to_not be nil
+  end
+
+  specify '#avg' do
+    geocode_stub = double 'GeocodeService', city_search: 'Almaty'
+    response_stub = double 'AccuweatherService', min: geocode
+
+    expect(json['Temperature']['Metric']['Value']).to_not be nil
+  end
 end
